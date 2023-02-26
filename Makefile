@@ -22,7 +22,7 @@ all:
 	./push.sh
 	./pull1.sh
 	./readd.sh
-	./rec-editor.sh
+	#./rec-editor.sh	#768
 	./rec-un-rec.sh
 	./rec-unrec-main.sh
 	./tag.sh
