@@ -33,9 +33,10 @@ for i in {2..3}; do
 		pijul add -r "$N"
 	done
 	record
-	# zero $(pijul ls | egrep ".[A-Z0-9]{13}+$" | wc -l)
 
-	# pijul channel switch "$i"
+	zero $(pijul ls | egrep ".[A-Z0-9]{13}+$" | wc -l)
+
+	pijul channel switch "$i"
 	# pijul channel switch main
 done
 
