@@ -18,7 +18,7 @@ tar -xJf ../../pijul-tests/kernel/linux-2.0.1.tar.xz --strip-components=1
 add
 record
 
-for i in {2..3}; do
+for i in {2..40}; do
 	xzcat ../../pijul-tests/patches/patch-2.0."$i".xz | patch -sp1
 	add
 	record
@@ -29,6 +29,6 @@ for i in {2..3}; do
 done
 
 cd ..
-diff -qr repo repo2
+eq 0 "$(diff -qr repo repo2 | grep -cv .pijul)"
 
 echo "OK--pull-loop"

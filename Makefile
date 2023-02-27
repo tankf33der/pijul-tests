@@ -21,6 +21,7 @@ all:
 	./mv-remove.sh
 	./push.sh
 	./pull1.sh
+	./pull-loop.sh
 	./readd.sh
 	#./rec-editor.sh	#768
 	./rec-un-rec.sh
