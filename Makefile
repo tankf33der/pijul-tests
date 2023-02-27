@@ -14,6 +14,7 @@ all:
 	./credit.sh
 	./fork-apply.sh
 	./fork-carousel.sh
+	./fork-kernels.sh
 	./fork-train.sh
 	./emptiness.sh
 	./fork-unrec.sh
