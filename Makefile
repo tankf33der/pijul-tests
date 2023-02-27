@@ -1,5 +1,6 @@
 all:
 	./add.sh
+	./add-pristine.sh
 	./apply-reverse.sh
 	./apply-depsonly.sh
 	./apply-tonew.sh
