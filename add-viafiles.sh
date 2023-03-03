@@ -11,4 +11,3 @@ pijul init repo
 cd repo
 
 tar -xJf ../../pijul-tests/kernel/linux-2.0.1.tar.xz --strip-components=1
-find . -type f -exec sh -c " pijul add "{}" && pijul rec -am"."" \;
