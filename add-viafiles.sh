@@ -17,11 +17,17 @@ find net/ -type f -exec sh -c " pijul add "{}" && pijul rec -am"."" \;
 pijul add Makefile
 record
 
-for i in {2..4}; do
+for i in {2..3}; do
 	pijul fork "$i"
 	pijul channel switch "$i"
 
 	xzcat ../../pijul-tests/patches/patch-2.0."$i".xz | patch -sp1
     add
     record
+
+	H=$(pijul log --hash-only | head -1)
+	pijul apply "$H" --channel main
+
+	pijul channel switch main
+	pijul channel delete "$i"
 done
