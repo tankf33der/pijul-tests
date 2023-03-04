@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+set -x -e
+
+source ./functions.sh
+
+cd ..
+rm -rf pijul-tests-data
+mkdir pijul-tests-data
+cd pijul-tests-data
+pijul init repo
+cd repo
+
+tar -xJf ../../pijul-tests/kernel/linux-2.0.1.tar.xz --strip-components=1
+find kernel/ -type f -exec sh -c " pijul add "{}" && pijul rec -am"."" \;
+find net/ -type f -exec sh -c " pijul add "{}" && pijul rec -am"."" \;
+# find drivers/ -type f -exec sh -c " pijul add "{}" && pijul rec -am"."" \;
+pijul add Makefile
+record
+
+for i in {2..4}; do
+	pijul fork "$i"
+	pijul channel switch "$i"
+
+	xzcat ../../pijul-tests/patches/patch-2.0."$i".xz | patch -sp1
+    add
+    record
+done
