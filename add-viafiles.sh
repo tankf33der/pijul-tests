@@ -29,5 +29,5 @@ for i in {2..3}; do
 	pijul apply "$H" --channel main
 
 	pijul channel switch main
-	pijul channel delete "$i"
+	# pijul channel delete "$i"
 done
