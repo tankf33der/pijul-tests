@@ -12,7 +12,7 @@ cd repo
 
 tar -xJf ../../pijul-tests/kernel/linux-2.0.1.tar.xz --strip-components=1
 find kernel/ -type f -exec sh -c " pijul add "{}" && pijul rec -am"."" \;
-find net/ -type f -exec sh -c " pijul add "{}" && pijul rec -am"."" \;
+# find net/ -type f -exec sh -c " pijul add "{}" && pijul rec -am"."" \;
 # find drivers/ -type f -exec sh -c " pijul add "{}" && pijul rec -am"."" \;
 pijul add Makefile
 record
