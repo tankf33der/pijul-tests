@@ -22,7 +22,6 @@ for i in {2..3}; do
 	pijul channel switch "$i"
 
 	xzcat ../../pijul-tests/patches/patch-2.0."$i".xz | patch -sp1
-    add
     record
 
 	H=$(pijul log --hash-only | head -1)
