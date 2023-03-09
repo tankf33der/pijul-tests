@@ -23,7 +23,7 @@ for i in {0..64}; do
 	cd ..
 	pijul clone repo repo2
 	cd repo2
-	python assert.py ${i}
+	python3 assert.py ${i}
 	cd ..
 	rm -rf repo2
 	cd repo
