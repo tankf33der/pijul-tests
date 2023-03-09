@@ -12,6 +12,7 @@ all:
 	./clone-while.sh
 	./clone-matryoshka.sh
 	./credit.sh
+	# ./diff-patience.sh
 	./fork-apply.sh
 	./fork-carousel.sh
 	./fork-kernels.sh
