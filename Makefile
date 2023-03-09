@@ -12,6 +12,7 @@ all:
 	./clone-while.sh
 	./clone-matryoshka.sh
 	./credit.sh
+	./diff.sh
 	# ./diff-patience.sh
 	./fork-apply.sh
 	./fork-carousel.sh
@@ -33,7 +34,6 @@ all:
 	./tag-mktemp.sh
 	./tag-reset.sh
 	./unrec-dir.sh
-	./utf8.sh
 	./switch-files.sh
 	./zigzag.sh
 	# Add-ons

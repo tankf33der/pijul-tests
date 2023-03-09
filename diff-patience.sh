@@ -19,11 +19,19 @@ cp ../../pijul-tests/utf8-shuffle.py .
 add
 pijul record --patience -am"."
 
-for _ in {0..256}; do
+for _ in {0..64}; do
 	./utf8-shuffle.py utf8.txt
 	mv utf8-2.txt utf8.txt
 	pijul record --patience -am"."
-done
+
+	cd ..
+	pijul clone repo repo2
+	cd repo2
+	./utf8-sum.py utf8.txt
+	cd ..
+	rm -rf repo2
+	cd repo
+ done
 
 # clone
 cd ..
@@ -31,4 +39,4 @@ pijul clone repo repo2
 cd repo2
 ./utf8-sum.py utf8.txt
 
-echo "OK--patience"
+echo "OK--diff-patience"
