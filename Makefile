@@ -12,8 +12,6 @@ all:
 	./clone-while.sh
 	./clone-matryoshka.sh
 	./credit.sh
-	./diff.sh
-	# ./diff-patience.sh
 	./fork-apply.sh
 	./fork-carousel.sh
 	./fork-kernels.sh
@@ -27,6 +25,8 @@ all:
 	./pull1.sh
 	./pull-loop.sh
 	./readd.sh
+	./record.sh
+	# ./record-patience.sh
 	./rec-editor.sh
 	./rec-un-rec.sh
 	./rec-unrec-main.sh
