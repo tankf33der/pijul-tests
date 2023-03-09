@@ -19,7 +19,7 @@ cp ../../pijul-tests/utf8-shuffle.py .
 add
 pijul record --patience -am"."
 
-for _ in {0..64}; do
+for _ in {0..128}; do
 	./utf8-shuffle.py utf8.txt
 	mv utf8-2.txt utf8.txt
 	pijul record --patience -am"."

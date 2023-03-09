@@ -38,6 +38,7 @@ all:
 	./zigzag.sh
 	# Add-ons
 	./peace.sh
-	./a.sh
+	./a-myers.sh
+	# ./a-patience.sh
 
 	echo "OK--pijul-tests"
