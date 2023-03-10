@@ -26,7 +26,7 @@ all:
 	./pull-loop.sh
 	./readd.sh
 	./record.sh
-	# ./record-patience.sh
+	./record-patience.sh
 	./rec-editor.sh
 	./rec-un-rec.sh
 	./rec-unrec-main.sh
@@ -39,6 +39,6 @@ all:
 	# Add-ons
 	./peace.sh
 	./a-myers.sh
-	# ./a-patience.sh
+	./a-patience.sh
 
 	echo "OK--pijul-tests"
