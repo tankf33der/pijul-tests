@@ -12,12 +12,12 @@ cd repo
 
 tar -xJf ../../pijul-tests/kernel/linux-2.0.1.tar.xz --strip-components=1
 find kernel/ -type f -exec sh -c " pijul add "{}" && pijul rec -am"."" \;
-# find net/ -type f -exec sh -c " pijul add "{}" && pijul rec -am"."" \;
-# find drivers/ -type f -exec sh -c " pijul add "{}" && pijul rec -am"."" \;
+find net/ -type f -exec sh -c " pijul add "{}" && pijul rec -am"."" \;
+find drivers/ -type f -exec sh -c " pijul add "{}" && pijul rec -am"."" \;
 pijul add Makefile
 record
 
-for i in {2..3}; do
+for i in {2..40}; do
 	pijul fork "$i"
 	pijul channel switch "$i"
 
@@ -29,4 +29,9 @@ for i in {2..3}; do
 
 	pijul channel switch main
 	pijul channel delete "$i"
+	eq 1 "$(pijul channel | wc -l)"
 done
+
+eq 2090994418 "$(cksum Makefile | awk '{print $1}')"
+
+echo "OK--add-viafiles"
