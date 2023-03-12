@@ -10,7 +10,7 @@ cd pijul-tests-data
 pijul init repo
 cd repo
 
-for _ in {0..16}; do
+for _ in {0..13}; do
 	pijul archive -o mike
 	pijul add -rf .pijul mike.tar.gz
 	pijul record -am"."
