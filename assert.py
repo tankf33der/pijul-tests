@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import sys
 
 p = int(sys.argv[1])
