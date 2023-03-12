@@ -39,4 +39,4 @@ pijul clone repo repo2
 cd repo2
 ./utf8-sum.py utf8.txt
 
-echo "OK--diff-patience"
+echo "OK--record-patience"
