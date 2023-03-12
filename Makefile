@@ -1,6 +1,7 @@
 all:
 	./add.sh
 	./add-pristine.sh
+	# ./add-viafiles.sh
 	./apply-reverse.sh
 	./apply-depsonly.sh
 	./apply-tonew.sh
@@ -12,14 +13,14 @@ all:
 	./clone-while.sh
 	./clone-matryoshka.sh
 	./credit.sh
+	./doubleitems.sh
+	./emptiness.sh
 	./fork-apply.sh
 	./fork-carousel.sh
 	./fork-kernels.sh
 	./fork-train.sh
-	./emptiness.sh
 	./fork-unrec.sh
 	./file2dir.sh
-	./doubleitems.sh
 	./mv-remove.sh
 	./push.sh
 	./pull1.sh
