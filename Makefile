@@ -26,6 +26,7 @@ all:
 	./pull-loop.sh
 	./readd.sh
 	./record.sh
+	./record-binary.sh
 	./record-patience.sh
 	./rec-editor.sh
 	./rec-un-rec.sh
