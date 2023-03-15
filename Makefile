@@ -17,7 +17,6 @@ all:
 	./emptiness.sh
 	./fork-apply.sh
 	./fork-carousel.sh
-	./fork-kernels.sh
 	./fork-train.sh
 	./fork-unrec.sh
 	./file2dir.sh
