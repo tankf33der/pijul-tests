@@ -8,7 +8,6 @@ all:
 	./apply-every.sh
 	./apply-randomly.sh
 	./archive.sh
-	./binary.sh
 	./clone.sh
 	./clone-while.sh
 	./clone-matryoshka.sh
