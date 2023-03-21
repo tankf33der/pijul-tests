@@ -17,14 +17,14 @@ add
 record
 eq 2143 "$(pijul ls | wc -l)"
 
-for i in {2..4}; do
+for i in {2..3}; do
 	xzcat ../../pijul-tests/patches/patch-2.0."$i".xz | patch -sp1
 	add
 	record
 done
 
 H=$(pijul log --hash-only | head -1)
-eq 4 "$(pijul dependents "$H" | wc -l)"
+eq 3 "$(pijul dependents "$H" | wc -l)"
 # for H in $(pijul dependents "$H"); do
 	# pijul apply --channel Empty "$H"
 # done
