@@ -27,6 +27,7 @@ H=$(pijul log --hash-only | head -1)
 eq 3 "$(pijul dependents "$H" | wc -l)"
 # for H in $(pijul dependents "$H"); do
 	# pijul apply --channel Empty "$H"
+	# assert always two channels
 # done
 #
 # M=$(cksum Makefile | awk '{print $1}')
