@@ -14,11 +14,11 @@ cp ../pijul-tests/assert.py repo/
 cd repo
 
 add
-pijul record -am"."
+record
 
 for i in {0..64}; do
 	sed -i "0,/Z/s//${i}/" A.txt
-	pijul record -am"."
+	record
 
 	cd ..
 	pijul clone repo repo2
