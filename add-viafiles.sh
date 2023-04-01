@@ -29,6 +29,7 @@ for i in {2..40}; do
 
 	pijul channel switch main
 	pijul channel delete "$i"
+	# assert only one channel left
 	eq 1 "$(pijul channel | wc -l)"
 done
 
