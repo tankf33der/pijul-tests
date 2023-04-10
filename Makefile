@@ -24,7 +24,7 @@ all:
 	./pull1.sh
 	./pull-loop.sh
 	./readd.sh
-	./record.sh
+	./record-myers.sh
 	./record-binary.sh
 	./record-patience.sh
 	./rec-editor.sh

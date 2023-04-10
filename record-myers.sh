@@ -59,4 +59,4 @@ pijul tag checkout "$LAST"
 pijul channel switch "$LAST"
 ./utf8-sum.py utf8.txt
 
-echo "OK--record"
+echo "OK--record-myers"
