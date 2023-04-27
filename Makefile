@@ -7,6 +7,7 @@ all:
 	./apply-tonew.sh
 	./apply-every.sh
 	./apply-randomly.sh
+	./apply-cross.sh
 	./archive.sh
 	./clone.sh
 	./clone-while.sh
