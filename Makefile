@@ -13,6 +13,7 @@ all:
 	./clone-while.sh
 	./clone-matryoshka.sh
 	./credit.sh
+	./dependents.sh
 	./doubleitems.sh
 	./emptiness.sh
 	./fork-apply.sh
