@@ -1,7 +1,7 @@
 all:
 	./add.sh
 	./add-pristine.sh
-	# ./add-viafiles.sh
+	./add-viafiles.sh
 	./apply-reverse.sh
 	./apply-depsonly.sh
 	./apply-tonew.sh
