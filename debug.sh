@@ -15,7 +15,7 @@ pijul add debug.*
 record
 pijul tag create -m.
 
-for _ in {0..1}
+for _ in {0..50}
 do
 	pijul debug
 	record
