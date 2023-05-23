@@ -32,8 +32,6 @@ for i in {2..40}; do
    str "$T" "$L"
 done
 
-exit 0
-
 FIRST="$(pijul tag  | grep State | tail -1 | awk '{print $2}')"
 LAST="$(pijul tag  | grep State | head -1 | awk '{print $2}')"
 pijul tag checkout "$FIRST"
