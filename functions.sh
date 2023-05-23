@@ -5,6 +5,13 @@ eq () {
 		exit 63
 	fi
 }
+
+str () {
+	if [ "$1" != "$2" ]; then
+		exit 63
+	fi
+}
+
 zero () {
 	if [ "$1" -ne 0 ]; then
 		exit 64

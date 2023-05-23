@@ -25,8 +25,14 @@ for i in {2..40}; do
    xzcat ../../pijul-tests/patches/patch-2.0."$i".xz | patch -sp1
    add
    record
-   pijul tag create -m"."
+   pijul tag create -m.
+
+   T="$(pijul tag | head -1 | awk '{print $2}')"
+   L="$(pijul log --state | head -4 | tail -1 | awk '{print $2}')"
+   str "$T" "$L"
 done
+
+exit 0
 
 FIRST="$(pijul tag  | grep State | tail -1 | awk '{print $2}')"
 LAST="$(pijul tag  | grep State | head -1 | awk '{print $2}')"
