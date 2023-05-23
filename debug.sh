@@ -14,8 +14,11 @@ pijul debug
 pijul add debug.*
 record
 
-for _ in {0..50}
+for _ in {0..10}
 do
 	pijul debug
 	record
 done
+
+pijul rm debug*
+record
