@@ -13,12 +13,21 @@ cd repo
 pijul debug
 pijul add debug.*
 record
+pijul tag create -m.
 
-for _ in {0..10}
+for _ in {0..1}
 do
 	pijul debug
 	record
+	pijul tag create -m.
 done
 
-pijul rm debug*
+pijul rm debug.*
 record
+pijul tag create -m.
+
+
+pijul debug
+pijul add debug.*
+record
+pijul tag create -m.
