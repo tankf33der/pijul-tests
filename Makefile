@@ -24,6 +24,7 @@ all:
 	./mv-remove.sh
 	./push.sh
 	./pull1.sh
+	# ./pull-conflict.sh
 	./pull-loop.sh
 	./readd.sh
 	./record-myers.sh
