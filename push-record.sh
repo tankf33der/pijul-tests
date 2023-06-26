@@ -21,7 +21,11 @@ for i in {2..40}; do
    record
 done
 
-pijul push "$(pijul log --hash-only | head -1)"
+for H in $(pijul log --hash-only | tac); do
+	pijul push ../repo -- "$H"
+done
 
+cd ../repo
+eq 2090994418 "$(cksum Makefile | awk '{print $1}')"
 
-echo "OK--apply-tac"
+echo "OK--push-record"

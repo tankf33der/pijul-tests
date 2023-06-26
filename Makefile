@@ -24,7 +24,7 @@ all:
 	./file2dir.sh
 	./mv-remove.sh
 	./push.sh
-	# ./push-record.sh
+	./push-record.sh
 	./pull1.sh
 	# ./pull-conflict.sh
 	./pull-loop.sh
