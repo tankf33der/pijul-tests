@@ -18,6 +18,7 @@ record
 
 pijul mv 1 2
 record
+ls -l
 H=$(pijul log --hash-only | head -1)
 pijul unrec --reset "$H"
 
