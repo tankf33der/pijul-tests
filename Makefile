@@ -4,6 +4,7 @@ all:
 	./add-viafiles.sh
 	./apply-reverse.sh
 	./apply-depsonly.sh
+	./apply-tac.sh
 	./apply-tonew.sh
 	./apply-every.sh
 	./apply-randomly.sh
