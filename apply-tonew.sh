@@ -22,7 +22,7 @@ done
 pijul channel new mike1
 # all hashes, uniq, randomly sorted
 # for H in $(pijul credit Makefile | grep -iPo "^\w+(, \w+)*$"  | tr -d ' ' | awk -F, '{for(i=1;i<=NF;i++) { print substr($i, 1, length($i)-1)}}' | sort -u); do
-for H in $(pijul credit Makefile | grep -o "^[[:alnum:]]*" | sort -Ru); do
+for H in $(pijul credit Makefile | grep -o "^[[:alnum:]]*" | sort -u | shuf); do
 	pijul apply --channel mike1 "$H"
 done
 
