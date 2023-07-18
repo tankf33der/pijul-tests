@@ -32,7 +32,7 @@ cd repo
 pijul channel new milestone2
 cd ../repo2
 # shellcheck disable=SC2006,SC2046
-pijul push ../repo --to-channel milestone2 -- `pijul log --hash-only | sort -R`
+pijul push ../repo --to-channel milestone2 -- `pijul log --hash-only | shuf`
 cd ../repo
 pijul channel switch milestone2
 eq 2090994418 "$(cksum Makefile | awk '{print $1}')"
