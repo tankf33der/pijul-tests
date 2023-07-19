@@ -12,7 +12,7 @@ pijul init repo
 cd repo
 
 for _ in {0..128}; do
-   touch "$(mktemp mike-XXXXX)"
+   touch "$(mktemp mike-XXXXXX)"
    add
    record
 done
