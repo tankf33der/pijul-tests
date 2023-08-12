@@ -32,12 +32,12 @@ echo "mike" >> Makefile
 sed -i 's/SUBLEVEL/mike/g' Makefile
 
 pijul record --timestamp "$T" -am"." 1> /dev/null
-H=$(pijul log --hash-only | head -1)
+H="$(pijul log --hash-only | head -1)"
 head Makefile
 tail Makefile
 
 pijul apply "$H" --channel Empty
-C=$(cksum Makefile | awk '{print $1}')
+C="$(cksum Makefile | awk '{print $1}')"
 pijul channel switch Empty
 eq "$C" "$(cksum Makefile | awk '{print $1}')"
 
