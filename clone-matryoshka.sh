@@ -25,7 +25,7 @@ for i in {2..40}; do
    rm -rf repo2
    cd repo
 done
-eq 2090994418 "$(cksum Makefile | awk '{print $1}')"
+crc Makefile 2090994418
 
 cd ..
 mkdir linux2040
