@@ -22,10 +22,10 @@ for i in {2..40}; do
 
    H="$(pijul log --hash-only | head -1)"
    pijul pull --repository ../repo2 -- "$H"
-   eq "$(cksum Makefile | awk '{print $1}')" "$(cksum ../repo2/Makefile | awk '{print $1}')"
+   eqfiles Makefile ../repo2/Makefile
 done
 
 cd ../repo2
-eq 2090994418 "$(cksum Makefile | awk '{print $1}')"
+crc Makefile 2090994418
 
 echo "OK--pull-record1"

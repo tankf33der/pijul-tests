@@ -25,6 +25,6 @@ H="$(pijul log --hash-only | head -1)"
 pijul pull --repository ../repo2 -- "$H"
 
 cd ../repo2
-eq 2090994418 "$(cksum Makefile | awk '{print $1}')"
+crc Makefile 2090994418
 
 echo "OK--pull-recordall"

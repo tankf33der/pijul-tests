@@ -26,6 +26,6 @@ for H in $(pijul log --hash-only | tac); do
 done
 
 cd ../repo
-eq 2090994418 "$(cksum Makefile | awk '{print $1}')"
+crc Makefile 2090994418
 
 echo "OK--push-record"

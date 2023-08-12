@@ -35,6 +35,6 @@ cd ../repo2
 pijul push ../repo --to-channel milestone2 -- `pijul log --hash-only | shuf`
 cd ../repo
 pijul channel switch milestone2
-eq 2090994418 "$(cksum Makefile | awk '{print $1}')"
+crc Makefile 2090994418
 
 echo "OK--push"
