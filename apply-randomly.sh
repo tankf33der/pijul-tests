@@ -24,6 +24,6 @@ done
 pijul channel new mike
 pijul apply --channel mike $(pijul log --hash-only | shuf)
 pijul channel switch mike
-eq 2090994418 "$(cksum Makefile | awk '{print $1}')"
+crc Makefile 2090994418
 
 echo "OK--apply-randomly"

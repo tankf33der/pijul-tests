@@ -27,8 +27,8 @@ for H in $(pijul log --hash-only | tac); do
 done
 
 pijul channel switch Reverse
-eq 2090994418 "$(cksum Makefile | awk '{print $1}')"
+crc Makefile 2090994418
 pijul channel switch main
-eq 2090994418 "$(cksum Makefile | awk '{print $1}')"
+crc Makefile 2090994418
 
 echo "OK--apply-tac"

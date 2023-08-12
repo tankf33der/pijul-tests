@@ -27,7 +27,7 @@ for H in $(pijul credit Makefile | grep -o "^[[:alnum:]]*" | sort -u | shuf); do
 done
 
 pijul channel switch mike1
-eq 2090994418 "$(cksum Makefile | awk '{print $1}')"
+crc Makefile 2090994418
 pijul channel switch main
 
 cd ..
@@ -44,7 +44,7 @@ for H in $(pijul log --hash-only); do
 done
 
 pijul channel switch 1
-eq 2090994418 "$(cksum Makefile | awk '{print $1}')"
+crc Makefile 2090994418
 pijul channel switch main
 
 for i in {1..40}; do

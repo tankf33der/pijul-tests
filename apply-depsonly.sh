@@ -25,6 +25,6 @@ done
 H=$(pijul log --hash-only | head -1)
 pijul apply "$H" --deps-only --channel Empty
 pijul channel switch Empty
-eq 2274700269 "$(cksum Makefile | awk '{print $1}')"
+crc Makefile 2274700269
 
 echo "OK--apply-depsonly"
