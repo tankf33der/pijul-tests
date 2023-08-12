@@ -22,7 +22,8 @@ for i in {2..40}; do
 done
 
 pijul channel new mike
-pijul apply --channel mike "$(pijul log --hash-only | shuf)"
+# do not quote $(pijul log ...)
+pijul apply --channel mike $(pijul log --hash-only | shuf)
 pijul channel switch mike
 crc Makefile 2090994418
 
