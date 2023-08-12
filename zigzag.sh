@@ -15,19 +15,18 @@ add
 record
 
 for i in {2..40}; do
-   C=$(pijul log --hash-only | head -1)
+   C="$(pijul log --hash-only | head -1)"
    pijul fork "$i"
    pijul apply "$C" --channel "$i"
    pijul channel switch "$i"
    xzcat ../../pijul-tests/patches/patch-2.0."$i".xz | patch -sp1
    add
    record
-   C=$(pijul log --hash-only | head -1)
+   C="$(pijul log --hash-only | head -1)"
    pijul apply "$C" --channel main
    pijul channel switch main
 done
 
-MAKE=$(cksum Makefile | awk '{print $1}')
-eq 2090994418 "$MAKE"
+crc Makefile 2090994418
 
 echo "OK--zigzag"

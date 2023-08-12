@@ -38,12 +38,12 @@ pijul tag checkout "$FIRST"
 pijul tag checkout "$LAST"
 # FIRST
 pijul channel switch  "$FIRST"
-eq 4200087900 "$(cksum a | awk '{print $1}')"
+crc a 4200087900
 eq 1 "$(pijul ls | wc -l)"
 # LAST
 pijul chann switch main
 pijul channel switch  "$LAST"
-eq 2090994418 "$(cksum Makefile | awk '{print $1}')"
-eq 4200087900 "$(cksum a | awk '{print $1}')"
+crc Makefile 2090994418
+crc a 4200087900
 
 echo "OK--tag"
