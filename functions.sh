@@ -6,6 +6,15 @@ eq () {
 	fi
 }
 
+eqfiles () {
+	eq "$(cksum $1 | awk '{print $1}')" "$(cksum $2 | awk '{print $1}')"
+}
+
+crc () {
+	eq "$(cksum $1 | awk '{print $1}')" "$2"
+}
+
+
 str () {
 	if [ "$1" != "$2" ]; then
 		exit 63

@@ -26,6 +26,6 @@ cd ../repo2
 pijul pull -a
 
 cd ..
-eq "$(cksum repo/Makefile | awk '{print $1}')" "$(cksum repo2/Makefile | awk '{print $1}')"
+eqfiles repo/Makefile repo2/Makefile
 
 echo "OK--push"
