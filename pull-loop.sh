@@ -25,10 +25,9 @@ for i in {2..40}; do
 
 	cd ../repo2
 	pijul pull -a
-	cd ../repo
+	cd ..
+	eq 0 "$(diff -qr repo repo2 | grep -cv .pijul)"
+	cd repo
 done
-
-cd ..
-eq 0 "$(diff -qr repo repo2 | grep -cv .pijul)"
 
 echo "OK--pull-loop"
