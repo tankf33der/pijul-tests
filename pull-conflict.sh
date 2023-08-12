@@ -26,12 +26,12 @@ record
 pijul pull -a
 
 # assert 1
-H=$(pijul diff | grep "1. Moved" | awk '{split($4,a,"."); print substr(a[2],1, length(a[2])-1)}')
-eq 1 $(pijul log --hash-only | grep -c "$H")
+H="$(pijul diff | grep "1. Moved" | awk '{split($4,a,"."); print substr(a[2],1, length(a[2])-1)}')"
+eq 1 "$(pijul log --hash-only | grep -c "$H")"
 
 # assert 2
-L=$(pijul diff | tail -2 | head -1)
-eq 1 $(echo "$L" | grep -c "BFD")
-eq 4 $(echo "$L" | grep -o BF | wc -l)
+L="$(pijul diff | tail -2 | head -1)"
+eq 1 "$(echo "$L" | grep -c "BFD")"
+eq 4 "$(echo "$L" | grep -o BF | wc -l)"
 
 echo "OK--pull-conflict"
