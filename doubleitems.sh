@@ -24,7 +24,7 @@ mkdir a
 pijul add a
 record
 
-H=$(pijul log --hash-only | head -2 | tail -1)
+H="$(pijul log --hash-only | head -2 | tail -1)"
 pijul unrecord "$H"
 eq 1 "$(pijul diff --short | wc -l)"
 record

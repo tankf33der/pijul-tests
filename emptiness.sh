@@ -38,10 +38,10 @@ done
 rm -rf -- *
 eq 1 "$(pijul diff --short | wc -l)"
 record
-eq 2090994418 "$(cksum Makefile | awk '{print $1}')"
+crc Makefile 2090994418
 
 pijul channel switch main
 eq 0 "$(pijul diff --short | wc -l)"
-eq 2090994418 "$(cksum Makefile | awk '{print $1}')"
+crc Makefile 2090994418
 
 echo "OK--emptiness"

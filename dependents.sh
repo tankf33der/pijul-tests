@@ -30,7 +30,7 @@ for H in $(pijul dependents "$H" | tac); do
 	eq 2 "$(pijul channel | wc -l)"
 done
 
-M=$(cksum Makefile | awk '{print $1}')
+M="$(cksum Makefile | awk '{print $1}')"
 pijul channel switch Empty
 eq "$M" "$(cksum Makefile | awk '{print $1}')"
 
