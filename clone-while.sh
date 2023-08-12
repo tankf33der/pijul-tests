@@ -19,9 +19,6 @@ pijul add m.tar.gz
 record
 for i in {0..512}; do
     pijul archive -o m
-    if [[ "$i" -eq 10 ]]; then
-    	break
-    fi
 	record
 done
 eq 1 "$(pijul diff --short | wc -l)"
