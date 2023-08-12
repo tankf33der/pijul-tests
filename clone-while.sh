@@ -17,7 +17,7 @@ record
 pijul archive -o m
 pijul add m.tar.gz
 record
-for i in {0..512}; do
+for i in {0..32}; do
     pijul archive -o m
 	record
 done
