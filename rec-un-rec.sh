@@ -23,19 +23,18 @@ done
 
 eq 2484 "$(pijul ls | wc -l)"
 
-
-H=$(pijul log --hash-only | head -1)
+H="$(pijul log --hash-only | head -1)"
 pijul fork Reset2040
 pijul apply "$H" --channel Reset2040
 pijul channel switch Reset2040
 for i in {0..38}; do
-	H=$(pijul log --hash-only | head -1)
+	H="$(pijul log --hash-only | head -1)"
 	pijul unrecord "$H" --reset
 done
 
 pijul channel switch main
 for i in {0..38}; do
-	H=$(pijul log --hash-only | head -1)
+	H="$(pijul log --hash-only | head -1)"
 	pijul unrecord "$H"
 done
 

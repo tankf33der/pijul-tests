@@ -23,6 +23,6 @@ for i in {2..40}; do
 done
 
 eq 903 "$(pijul ls | wc -l)"
-eq 2090994418 "$(cksum Makefile | awk '{print $1}')"
+crc Makefile 2090994418
 
 echo "OK--rec-editor"

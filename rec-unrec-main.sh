@@ -47,7 +47,7 @@ pijul channel switch main
 eq 45 "$(pijul diff -su | wc -l)"
 
 # milestone #4
-H=$(pijul log --hash-only | tail -2 | head -1)
+H="$(pijul log --hash-only | tail -2 | head -1)"
 pijul apply "$H" --channel m1
 pijul channel switch m1
 echo "MIKEMIKE" >> mike
@@ -57,13 +57,13 @@ echo "MIKEMIKE" >> mike
 record
 sed -i '1d;$d' Makefile
 record
-eq 322996445 "$(cksum Makefile | awk '{print $1}')"
+crc Makefile 322996445
 
 # milestone #5
 pijul channel switch main
-H=$(pijul log --hash-only | head -1)
+H="$(pijul log --hash-only | head -1)"
 pijul apply "$H" --channel m1
 pijul channel switch m1
-eq 2090994418 "$(cksum Makefile | awk '{print $1}')"
+crc Makefile 2090994418
 
 echo "OK--rec-unrec-main"

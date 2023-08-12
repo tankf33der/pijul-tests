@@ -20,14 +20,14 @@ record
 eq 0 "$(pijul diff --short | wc -l)"
 eq 5 "$(pijul ls | wc -l)"
 
-H=$(pijul log --hash-only | head -1)
+H="$(pijul log --hash-only | head -1)"
 pijul apply "$H" --channel main
 pijul channel switch main
 eq 5 "$(pijul ls | wc -l)"
 
 pijul remove b
 record
-H=$(pijul log --hash-only | head -1)
+H="$(pijul log --hash-only | head -1)"
 pijul apply "$H" --channel m1
 pijul channel switch m1
 eq 2 "$(pijul ls | wc -l)"
