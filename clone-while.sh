@@ -21,7 +21,7 @@ for i in {0..32}; do
     pijul archive -o m
 	record
 done
-eq 1 "$(pijul diff --short | wc -l)"
+zero "$(pijul diff --short | wc -l)"
 pijul reset
 # XXX, still 1 in script, 0 if run manually
 #eq 0 "$(pijul diff --short | wc -l)"
