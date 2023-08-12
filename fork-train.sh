@@ -29,7 +29,6 @@ done
 H=$(pijul log --hash-only | head -1)
 pijul apply "$H" --channel main
 pijul channel switch main
-MAKE=$(cksum Makefile | awk '{print $1}')
-eq 2090994418 "$MAKE"
+crc Makefile 2090994418
 
 echo "OK--fork-train"

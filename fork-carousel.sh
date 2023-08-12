@@ -31,12 +31,10 @@ pijul apply "$H" --channel main
 pijul apply "$H" --channel empty
 
 pijul channel switch main
-MAKE=$(cksum Makefile | awk '{print $1}')
-eq 2090994418 "$MAKE"
+crc Makefile 2090994418
 
 pijul channel switch empty
-MAKE=$(cksum Makefile | awk '{print $1}')
-eq 2090994418 "$MAKE"
+crc Makefile 2090994418
 
 pijul channel switch main
 pijul channel delete empty

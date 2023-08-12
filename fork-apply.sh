@@ -28,9 +28,9 @@ done
 
 zero "$(pijul diff --short | wc -l)"
 
-MAIN=$(cksum Makefile | awk '{print $1}')
+MAIN="$(cksum Makefile | awk '{print $1}')"
 pijul channel switch Makefile
-MAKE=$(cksum Makefile | awk '{print $1}')
+MAKE="$(cksum Makefile | awk '{print $1}')"
 pijul reset
 eq "$MAIN" "$MAKE"
 
@@ -39,7 +39,7 @@ pijul channel switch Orig2040
 tar -xJf ../../pijul-tests/kernel/linux-2.0.40.tar.xz --strip-components=1
 add
 record
-MAKE=$(cksum Makefile | awk '{print $1}')
+MAKE="$(cksum Makefile | awk '{print $1}')"
 eq "$MAIN" "$MAKE"
 
 pijul channel switch main
