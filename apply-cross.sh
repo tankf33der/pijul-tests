@@ -18,4 +18,6 @@ pijul channel new t1
 pijul channel switch t1
 pijul apply "$H"
 
+crc a 4294967295
+
 echo "OK--apply-cross"
