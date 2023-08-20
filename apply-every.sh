@@ -26,15 +26,11 @@ done
 cd Documentation
 find . -type f -exec bash -c 'echo "mike" >> "$1"' _ {} \;
 cd ..
-head Makefile
-tail Makefile
 echo "mike" >> Makefile
 sed -i 's/SUBLEVEL/mike/g' Makefile
 
 pijul record --timestamp "$T" -am"." 1> /dev/null
 H="$(pijul log --hash-only | head -1)"
-head Makefile
-tail Makefile
 
 pijul apply "$H" --channel Empty
 C="$(cksum Makefile | awk '{print $1}')"
