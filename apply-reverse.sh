@@ -23,7 +23,7 @@ for i in {2..40}; do
    record
 done
 
-for i in {1..40}; do
+for i in {40..1}; do
 	H=$(pijul log --hash-only | head -"$i" | tail -1)
 	pijul apply "$H" --channel Reverse
 done
