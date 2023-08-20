@@ -45,10 +45,15 @@ done
 
 pijul channel switch 1
 crc Makefile 2090994418
+pijul channel switch 40
+crc Makefile 1115719611
 pijul channel switch main
 
-for i in {1..40}; do
+for i in {1..41}; do
     pijul channel delete "$i"
 done
+
+pijul channel delete mike1
+crc Makefile 2090994418
 
 echo "OK--apply-tonew"
