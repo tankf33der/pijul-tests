@@ -10,6 +10,7 @@ all:
 	./apply-randomly.sh
 	./apply-cross.sh
 	./archive.sh
+	./braid.sh
 	./clone.sh
 	./clone-while.sh
 	./clone-matryoshka.sh
