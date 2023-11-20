@@ -53,9 +53,4 @@ crc b 930277684
 crc c 2376366260
 crc d 4192802898
 
-
-
-
-
-
 echo "OK--braid"
