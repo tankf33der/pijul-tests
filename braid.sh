@@ -33,7 +33,7 @@ echo "2" >> c
 record
 
 echo "3" >> c
-echo "2" >> d
+echo "3" >> d
 record
 
 echo "4" >> b
@@ -51,6 +51,8 @@ pijul channel switch m1
 crc a 1781451400
 crc b 930277684
 crc c 2376366260
-crc d 4192802898
+crc d 4164007125
+
+eq 10 "$(pijul log --hash-only | wc -l)"
 
 echo "OK--braid"
