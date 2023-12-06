@@ -20,7 +20,7 @@ for i in {2..40}; do
 done
 
 pijul channel new mike1
-for H in $(pijul credit Makefile | grep -o "^[[:alnum:]]*" | sort -u | shuf); do
+for H in $(pijul credit Makefile | grep -o "^[[:alnum:]]*" | sort -u | head -2); do
 	pijul apply --channel mike1 "$H"
 done
 
