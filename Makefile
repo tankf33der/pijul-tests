@@ -1,6 +1,5 @@
 all:
 	./add.sh
-	./apply-1.sh
 	./add-pristine.sh
 	./add-viafiles.sh
 	./apply-reverse.sh
