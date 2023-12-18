@@ -8,6 +8,8 @@ rm -rf pijul-tests-data
 mkdir pijul-tests-data
 cd pijul-tests-data
 pijul init repo
+pijul clone repo  repo2
+pijul clone repo2 repo3
 cd repo
 
 # ready!
@@ -25,12 +27,12 @@ done
 
 # step 2, prepear donors
 cd ..
-pijul clone repo repo2
 cd repo2
+pijul pull -a
 
 cd ..
-pijul clone repo2 repo3
 cd repo3
+pijul pull -a
 
 # step 3, delete file and push
 cd ..
