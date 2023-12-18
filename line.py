@@ -1,3 +1,5 @@
+
+# https://www.pythonforbeginners.com/basics/overwrite-a-file-in-python#htoc-overwrite-a-file-using-seek-and-truncate-method-in-python
 with open('file.txt', 'r') as file:
     # Create an empty list to store the lines
     lines = []
