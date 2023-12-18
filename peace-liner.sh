@@ -23,7 +23,7 @@ for _ in {0..128}; do
 	record
 done
 
-# step 2
+# step 2, prepear donors
 cd ..
 pijul clone repo repo2
 cd repo2
@@ -51,6 +51,5 @@ done
 cd ..
 cd repo2
 pijul pull -a
-# the fin
 
 echo "OK--peace-liner"
