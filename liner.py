@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 
 import random
+import time
+
+random.seed(int(str(time.time()).split(".")[1]))
 
 with open('peace-and-war.txt', 'r') as f:
     lines = []
