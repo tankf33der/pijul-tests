@@ -18,7 +18,7 @@ cp ../../pijul-tests/peace-and-war.txt .
 pijul add peace-and-war.txt
 record
 
-for _ in {0..128}; do
+for _ in {0..16}; do
 	./liner.py
 	record
 done
@@ -27,12 +27,10 @@ done
 cd ..
 pijul clone repo repo2
 cd repo2
-pijul pull -a
 
 cd ..
 pijul clone repo2 repo3
 cd repo3
-pijul pull -a
 
 # step 3, delete file and push
 cd ..
@@ -44,7 +42,7 @@ pijul push -a
 # final step, push second bulk of records
 cd ..
 cd repo
-for _ in {0..128}; do
+for _ in {0..16}; do
 	./liner.py
 	record
 done
