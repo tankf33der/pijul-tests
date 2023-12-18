@@ -2,7 +2,7 @@
 
 import random
 
-with open('mike', 'r') as f:
+with open('peace-and-war.txt', 'r') as f:
     lines = []
 
     for line in f:
@@ -11,7 +11,7 @@ with open('mike', 'r') as f:
 
 random.shuffle(lines[random.randint(0, len(lines)-1)])
 
-with open('mike', 'a') as f:
+with open('peace-and-war.txt', 'a') as f:
     f.seek(0)
     f.truncate()
 
