@@ -1,16 +1,19 @@
+#!/usr/bin/env python3
 
-# https://www.pythonforbeginners.com/basics/overwrite-a-file-in-python#htoc-overwrite-a-file-using-seek-and-truncate-method-in-python
-with open('file.txt', 'r') as file:
-    # Create an empty list to store the lines
+import random
+
+with open('mike', 'r') as f:
     lines = []
 
-    # Iterate over the lines of the file
-    for line in file:
-        # Remove the newline character at the end of the line
+    for line in f:
         line = line.strip()
+        lines.append(list(line))
 
-        # Append the line to the list
-        lines.append(line)
+random.shuffle(lines[random.randint(0, len(lines)-1)])
 
-# Print the list of lines
-print(lines)
+with open('mike', 'a') as f:
+    f.seek(0)
+    f.truncate()
+
+    for line in lines:
+        f.write(f"{''.join(line)}\n")
