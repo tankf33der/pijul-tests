@@ -33,8 +33,5 @@ cd linux2040
 tar -xJf ../../pijul-tests/kernel/linux-2.0.40.tar.xz --strip-components=1
 cd ..
 eq 0 "$(diff -qr repo linux2040 | grep -cv "Only in")"
-rm -rf repo
-rm -rf repo2
-rm -rf linux2040
 
 echo "OK--clone-matryoshka"
