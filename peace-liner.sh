@@ -20,7 +20,7 @@ cp ../../pijul-tests/peace-and-war.txt .
 pijul add peace-and-war.txt
 record
 
-for _ in {0..16}; do
+for _ in {0..64}; do
 	./liner.py
 	record
 done
@@ -44,7 +44,7 @@ pijul push -a
 # final step, push second bulk of records
 cd ..
 cd repo
-for _ in {0..16}; do
+for _ in {0..64}; do
 	./liner.py
 	record
 done
