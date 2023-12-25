@@ -35,7 +35,7 @@ all:
 	./record-myers.sh
 	./record-binary.sh
 	./record-patience.sh
-	./rec-editor.sh
+	# ./rec-editor.sh		# USELESS
 	./rec-un-rec.sh
 	./rec-unrec-main.sh
 	./tag.sh
