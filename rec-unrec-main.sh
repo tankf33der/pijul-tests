@@ -2,6 +2,12 @@
 # https://nest.pijul.com/pijul/pijul/discussions/401
 set -x -e
 
+sed='sed'
+u=$(uname)
+if [ "$u" = "FreeBSD" ]; then
+	sed='gsed'
+fi
+
 source ./functions.sh
 
 cd ..
@@ -55,7 +61,7 @@ cat Makefile >> mike
 mv mike Makefile
 echo "MIKEMIKE" >> mike
 record
-sed -i '1d;$d' Makefile
+$sed -i '1d;$d' Makefile
 record
 crc Makefile 322996445
 

@@ -2,6 +2,12 @@
 
 set -x -e
 
+sed='sed'
+u=$(uname)
+if [ "$u" = "FreeBSD" ]; then
+	sed='gsed'
+fi
+
 source ./functions.sh
 
 cd ..
@@ -17,13 +23,13 @@ add
 record
 
 for i in {0..64}; do
-	sed -i "0,/Z/s//${i}/" A.txt
+	$sed -i "0,/Z/s//${i}/" A.txt
 	record
 
 	cd ..
 	pijul clone repo repo2
 	cd repo2
-	./assert.py ${i}
+	./assert.py "${i}"
 	cd ..
 	rm -rf repo2
 	cd repo

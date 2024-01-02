@@ -2,6 +2,12 @@
 # https://nest.pijul.com/pijul/pijul/discussions/424
 set -x -e
 
+sed='sed'
+u=$(uname)
+if [ "$u" = "FreeBSD" ]; then
+	sed='gsed'
+fi
+
 source ./functions.sh
 
 T=$(date +%s)
@@ -27,7 +33,7 @@ cd Documentation
 find . -type f -exec bash -c 'echo "mike" >> "$1"' _ {} \;
 cd ..
 echo "mike" >> Makefile
-sed -i 's/SUBLEVEL/mike/g' Makefile
+$sed -i 's/SUBLEVEL/mike/g' Makefile
 
 pijul record --timestamp "$T" -am"." 1> /dev/null
 H="$(pijul log --hash-only | head -1)"
