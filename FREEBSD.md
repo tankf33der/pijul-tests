@@ -7,5 +7,4 @@
 	./rec-un-rec.sh
 	./rec-unrec-main.sh
 	./switch-files.sh
-	./peace.sh
 ```
