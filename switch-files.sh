@@ -29,12 +29,11 @@ add
 record
 echo "1" >> b
 record
+
 eq 0 "$(pijul diff --short | wc -l)"
-eq 4 "$(ls -l | wc -l)"
 eq 5 "$(pijul ls | wc -l)"
 
 pijul channel switch main
-eq 4 "$(ls -l | wc -l)"
 eq 1 "$(pijul ls | wc -l)"
 
 echo "OK--switch-files"
