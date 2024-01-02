@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
+
 set -x -e
+
+sed='patch'
+u=$(uname)
+if [ "$u" = "FreeBSD" ]; then
+	sed='gpatch'
+fi
 
 source ./functions.sh
 

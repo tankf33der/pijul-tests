@@ -1,5 +1,5 @@
 ``` shell
-# pkg install shuf gsed python3
+# pkg install shuf gsed python3 patch
 ```
 
 ### FAILED
