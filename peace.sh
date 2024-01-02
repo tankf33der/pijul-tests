@@ -2,6 +2,12 @@
 
 set -x -e
 
+shuf='shuf peace.txt -o peace.txt'
+u=$(uname)
+if [ "$u" = "FreeBSD" ]; then
+	shuf='cat peace.txt | shuf -o peace2.txt | mv peace2.txt peace.txt'
+fi
+
 source ./functions.sh
 
 T=$(date +%s)
@@ -17,7 +23,8 @@ add
 record
 
 for _ in {0..128}; do
-   shuf peace.txt -o peace.txt
+   # shuf peace.txt -o peace.txt
+   $shuf
    pijul record --timestamp "$T" -am"." 1> /dev/null
 done
 
