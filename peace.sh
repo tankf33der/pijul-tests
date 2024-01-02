@@ -24,7 +24,7 @@ record
 
 for _ in {0..128}; do
    # shuf peace.txt -o peace.txt
-   $shuf
+   eval "$shuf"
    pijul record --timestamp "$T" -am"." 1> /dev/null
 done
 
