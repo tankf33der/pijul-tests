@@ -3,9 +3,11 @@
 set -x -e
 
 sed='sed'
+p='patch'
 u=$(uname)
 if [ "$u" = "FreeBSD" ]; then
 	sed='gsed'
+	p='gpatch'
 fi
 
 source ./functions.sh
@@ -22,7 +24,7 @@ add
 record
 
 for i in {2..40}; do
-   xzcat ../../pijul-tests/patches/patch-2.0."$i".xz | patch -sp1
+   xzcat ../../pijul-tests/patches/patch-2.0."$i".xz | "$p" -sp1
    add
    record
 done
