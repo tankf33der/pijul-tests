@@ -5,10 +5,13 @@ set -x -e
 sed='sed'
 p='patch'
 u=$(uname)
-if [ "$u" = "FreeBSD" ] || [ "$u" = "Darwin" ]; then
+if [ "$u" = "FreeBSD" ]; then
 	sed='gsed'
 	p='gpatch'
+elif [ "$u" = "Darwin" ]; then
+	sed='gsed'
 fi
+
 
 source ./functions.sh
 
