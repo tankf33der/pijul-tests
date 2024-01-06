@@ -4,7 +4,7 @@ set -x -e
 
 sed='sed'
 u=$(uname)
-if [ "$u" = "FreeBSD" ]; then
+if [ "$u" = "FreeBSD" ] || [ "$u" = "Darwin" ]; then
 	sed='gsed'
 fi
 
