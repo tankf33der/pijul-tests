@@ -1,3 +1,3 @@
 ```
-$ brew install gnu-sed
+$ brew install gnu-sed gpatch
 ```
