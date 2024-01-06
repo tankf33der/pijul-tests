@@ -5,7 +5,7 @@ set -x -e
 sed='sed'
 p='patch'
 u=$(uname)
-if [ "$u" = "FreeBSD" ]; then
+if [ "$u" = "FreeBSD" ] || [ "$u" = "Darwin" ]; then
 	sed='gsed'
 	p='gpatch'
 fi
