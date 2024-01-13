@@ -3,9 +3,13 @@
 set -x -e
 
 sed='sed'
+python='python3'
 u=$(uname)
-if [ "$u" = "FreeBSD" ] || [ "$u" = "Darwin" ] || [ "$u" = "NetBSD" ]; then
+if [ "$u" = "FreeBSD" ] || [ "$u" = "Darwin" ]; then
 	sed='gsed'
+elif [ "$u" = "NetBSD" ]; then
+	sed='gsed'
+	python='python3.12'
 fi
 
 source ./functions.sh
@@ -29,7 +33,7 @@ for i in {0..64}; do
 	cd ..
 	pijul clone repo repo2
 	cd repo2
-	./assert.py "${i}"
+	"$python" ./assert.py "${i}"
 	cd ..
 	rm -rf repo2
 	cd repo

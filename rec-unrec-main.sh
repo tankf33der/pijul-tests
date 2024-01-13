@@ -12,7 +12,6 @@ elif [ "$u" = "Darwin" ]; then
 	sed='gsed'
 fi
 
-
 source ./functions.sh
 
 cd ..
