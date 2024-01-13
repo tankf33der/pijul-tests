@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 set -x -e
 
+python='python3'
+u=$(uname)
+if [ "$u" = "NetBSD" ]; then
+	python='python3.12'
+fi
+
 source ./functions.sh
 
 cd ..
@@ -15,19 +21,19 @@ cp ../../pijul-tests/utf8-sum.py .
 cp ../../pijul-tests/utf8-shuffle.py .
 
 # ready!
-./utf8-sum.py utf8.txt
+"$python" ./utf8-sum.py utf8.txt
 add
 pijul record --patience -am"."
 
 for _ in {0..128}; do
-	./utf8-shuffle.py utf8.txt
+	"$python" ./utf8-shuffle.py utf8.txt
 	mv utf8-2.txt utf8.txt
 	pijul record --patience -am"."
 
 	cd ..
 	pijul clone repo repo2
 	cd repo2
-	./utf8-sum.py utf8.txt
+	"$python" ./utf8-sum.py utf8.txt
 	cd ..
 	rm -rf repo2
 	cd repo
@@ -37,6 +43,6 @@ for _ in {0..128}; do
 cd ..
 pijul clone repo repo2
 cd repo2
-./utf8-sum.py utf8.txt
+"$python" ./utf8-sum.py utf8.txt
 
 echo "OK--record-patience"
