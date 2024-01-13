@@ -4,7 +4,7 @@ set -x -e
 
 p='patch'
 u=$(uname)
-if [ "$u" = "FreeBSD" ]; then
+if [ "$u" = "FreeBSD" ] || [ "$u" = "NetBSD" ]; then
 	p='gpatch'
 fi
 
