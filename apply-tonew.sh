@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 set -x -e
 
+u=$(uname)
+if [ "$u" = "NetBSD" ]; then
+	exit 0;
+fi
+
 source ./functions.sh
 
 cd ..
