@@ -6,6 +6,8 @@ shuf='shuf peace.txt -o peace.txt'
 u=$(uname)
 if [ "$u" = "FreeBSD" ]; then
 	shuf='cat peace.txt | shuf -o p2 && mv p2 peace.txt'
+elif [ "$u" = "NetBSD" ]; then
+	exit 0;
 fi
 
 source ./functions.sh
