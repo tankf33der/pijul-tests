@@ -48,7 +48,7 @@ done
 eq 2529 "$(pijul ls | wc -l)"
 eq 2 "$(pijul log --hash-only | wc -l)"
 
-pijul reset
+pijul reset --force
 eq 2143 "$(pijul ls | wc -l)"
 pijul channel switch Reset2040
 zero "$(pijul diff --channel main | wc -l)"
