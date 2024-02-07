@@ -27,7 +27,7 @@ pijul channel switch emptiness
 # milestone #1
 eq 0 "$(pijul diff --short | wc -l)"
 rm -rf -- *
-pijul reset
+pijul reset --force
 eq 0 "$(pijul diff --short | wc -l)"
 
 # milestone #2
