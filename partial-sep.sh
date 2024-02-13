@@ -33,5 +33,6 @@ pijul clone --path a repo a
 pijul clone --path b repo b
 pijul log --hash-only --repository a > a.records
 pijul log --hash-only --repository b > b.records
+eq 1 "$(comm -12 <(sort a.records) <(sort b.records) | wc -l)"
 
 echo "OK--partial-sep"
