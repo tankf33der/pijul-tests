@@ -20,4 +20,25 @@ for i in {2..40}; do
 	record
 done
 
+
+# milestone #1
+cd ..
+pijul clone --path Makefile repo Makefile
+cd Makefile
+crc Makefile 2090994418
+
+# milestone #1a
+cd ..
+pijul clone --path net/ipv4/arp.c repo arpc
+cd arpc
+crc net/ipv4/arp.c 2199210372
+
+# milestone #2
+cd ..
+pijul clone --path net/ipv4 repo ipv4
+cd ipv4
+crc net/ipv4/arp.c 2199210372
+cd ..
+diff -qr repo/net/ipv4 ipv4/net/ipv4
+
 echo "OK--partial-all"
