@@ -40,21 +40,21 @@ for i in {0..38}; do
 	H=$(pijul log --hash-only | head -1)
 	pijul unrecord "$H" --reset
 done
-eq 386 "$(pijul diff -su | wc -l)"
+eq 228 "$(pijul diff -su | wc -l)"
 
 # milestone #2
 pijul channel switch main
-eq 6 "$(pijul diff -su | wc -l)"
+eq 5 "$(pijul diff -su | wc -l)"
 
 pijul channel switch m1
-eq 386 "$(pijul diff -su | wc -l)"
+eq 228 "$(pijul diff -su | wc -l)"
 H=$(pijul log --hash-only | head -1)
 pijul unrecord "$H" --reset
-eq 2529 "$(pijul diff -su | wc -l)"
+eq 20 "$(pijul diff -su | wc -l)"
 
 # milestone #3
 pijul channel switch main
-eq 45 "$(pijul diff -su | wc -l)"
+eq 29 "$(pijul diff -su | wc -l)"
 
 # milestone #4
 H="$(pijul log --hash-only | tail -2 | head -1)"
