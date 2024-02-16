@@ -37,10 +37,15 @@ done
 cd ..
 cd ..
 
+# milestone #1
 pijul clone --path a repo a
 pijul clone --path b repo b
 pijul log --hash-only --repository a > a.records
 pijul log --hash-only --repository b > b.records
 eq 1 "$(comm -12 <(sort a.records) <(sort b.records) | wc -l)"
+
+# 2
+# expecting latest record for kernel 2.0.40
+eq 1 "$(head a/a/Makefile | grep 40 | wc -l)"
 
 echo "OK--partial-all2"
