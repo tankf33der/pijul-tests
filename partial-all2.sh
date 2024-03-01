@@ -44,8 +44,11 @@ pijul log --hash-only --repository a > a.records
 pijul log --hash-only --repository b > b.records
 eq 1 "$(comm -12 <(sort a.records) <(sort b.records) | wc -l)"
 
-# 2
+# milestone #2
 # expecting latest record for kernel 2.0.40
-eq 1 "$(head a/a/Makefile | grep 40 | wc -l)"
+eq 1 "$(head a/a/Makefile | grep -c 40)"
+
+# milestone #3
+zero "$(diff -qr a/a b/b | wc -l)"
 
 echo "OK--partial-all2"
