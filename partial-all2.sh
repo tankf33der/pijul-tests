@@ -42,6 +42,8 @@ pijul clone --path a repo a
 pijul clone --path b repo b
 pijul log --hash-only --repository a > a.records
 pijul log --hash-only --repository b > b.records
+eq 41 "$(cat a.records | wc -l)"
+eq 41 "$(cat b.records | wc -l)"
 eq 1 "$(comm -12 <(sort a.records) <(sort b.records) | wc -l)"
 
 # milestone #2
@@ -50,5 +52,7 @@ eq 1 "$(head a/a/Makefile | grep -c 40)"
 
 # milestone #3
 zero "$(diff -qr a/a b/b | wc -l)"
+zero "$(diff -qr a/a repo/a | wc -l)"
+zero "$(diff -qr a/a repo/b | wc -l)"
 
 echo "OK--partial-all2"
