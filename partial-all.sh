@@ -43,6 +43,6 @@ crc net/ipv4/arp.c 2199210372
 
 # milestone #3
 cd ..
-eq 0 "$(diff -qr repo/net/ipv4 ipv4/net/ipv4 | wc -l)"
+zero "$(diff -qr repo/net/ipv4 ipv4/net/ipv4 | wc -l)"
 
 echo "OK--partial-all"
