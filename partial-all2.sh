@@ -57,7 +57,7 @@ zero "$(diff -qr a/a repo/b | wc -l)"
 
 # milestone #4
 pijul clone --path a/scripts/lxdialog/yesno.c repo yesno
-zero "$(diff repo/b/scripts/lxdialog/yesno.c yesno/a/scripts/lxdialog/yesno.c)"
+zero "$(diff repo/b/scripts/lxdialog/yesno.c yesno/a/scripts/lxdialog/yesno.c | wc -l)"
 cd yesno
 eq 2 "$(pijul log --hash-only | wc -l)"
 eq 1 "$(pijul change | grep yesno | grep -c 'File add')"
