@@ -38,10 +38,11 @@ done
 rm -rf -- *
 eq 1 "$(pijul diff --short | wc -l)"
 record
-crc Makefile 2090994418
 
 pijul channel switch main
 eq 0 "$(pijul diff --short | wc -l)"
+crc Makefile 2090994418
+pijul channel switch emptiness
 crc Makefile 2090994418
 
 echo "OK--emptiness"
