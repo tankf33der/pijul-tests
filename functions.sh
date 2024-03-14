@@ -1,19 +1,28 @@
 #!/usr/bin/env bash
 
+exist() {
+	local f=$1
+	if [ ! -e "$f" ]; then
+		exit 61
+	fi
+}
+
 eq () {
 	if [ "$1" -ne "$2" ]; then
-		exit 63
+		exit 62
 	fi
 }
 
 eqfiles () {
-	eq "$(cksum $1 | awk '{print $1}')" "$(cksum $2 | awk '{print $1}')"
+	exist "$1"
+	exist "$2"
+	eq "$(cksum "$1" | awk '{print $1}')" "$(cksum "$2" | awk '{print $1}')"
 }
 
 crc () {
-	eq "$(cksum $1 | awk '{print $1}')" "$2"
+	exist "$1"
+	eq "$(cksum "$1" | awk '{print $1}')" "$2"
 }
-
 
 str () {
 	if [ "$1" != "$2" ]; then
