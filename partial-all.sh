@@ -45,4 +45,13 @@ crc net/ipv4/arp.c 2199210372
 cd ..
 zero "$(diff -qr repo/net/ipv4 ipv4/net/ipv4 | wc -l)"
 
+# milestone #4
+cd repo
+find -- * -prune -type d | while IFS= read -r d; do
+	cd ..
+	pijul clone --path "$d" repo "$d"
+	zero "$(diff -qr repo/"$d" "$d"/"$d" | wc -l)"
+	cd repo
+done
+
 echo "OK--partial-all"
