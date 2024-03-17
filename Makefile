@@ -24,9 +24,9 @@ all:
 	./fork-unrec.sh
 	./file2dir.sh
 	./mv-remove.sh
-	./partial-all.sh
-	./partial-all2.sh
-	./partial-sep.sh
+	./partial-clone-all.sh
+	./partial-clone-all2.sh
+	./partial-clone-sep.sh
 	./push.sh
 	./push-record.sh
 	./pull1.sh
