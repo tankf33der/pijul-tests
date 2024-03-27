@@ -28,4 +28,4 @@ pijul pull -a
 cd ..
 eqfiles repo/Makefile repo2/Makefile
 
-echo "OK--push"
+echo "OK--pull1"
