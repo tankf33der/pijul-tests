@@ -53,6 +53,7 @@ all:
 
 m:
 	./braid.sh
+	./credit.sh
 	./dependents.sh
 	./partial-clone-all.sh
 	./peace.sh
