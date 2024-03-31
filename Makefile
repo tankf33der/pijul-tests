@@ -51,4 +51,14 @@ all:
 	./a-myers.sh
 	./a-patience.sh
 
+m:
+	./braid.sh
+	./dependents.sh
+	./partial-clone-all.sh
+	./peace.sh
+	./pull-record1.sh
+	./push-record.sh
+	./tag.sh
+	./zigzag.sh
+
 	echo "OK--pijul-tests"
