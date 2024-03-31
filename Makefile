@@ -57,8 +57,6 @@ m:
 	./dependents.sh
 	./partial-clone-all.sh
 	./peace.sh
-	./pull-record1.sh
-	./push-record.sh
 	./tag.sh
 	./zigzag.sh
 
