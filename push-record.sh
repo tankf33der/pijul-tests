@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 set -x -e
 
+tac='tac'
+u=$(uname)
+if [ "$u" = "FreeBSD" ]; then
+        tac='gtac'
+fi
+
 source ./functions.sh
 
 cd ..
@@ -21,7 +27,7 @@ for i in {2..40}; do
    record
 done
 
-for H in $(pijul log --hash-only | tac); do
+for H in $(pijul log --hash-only | $tac); do
 	pijul push ../repo -- "$H"
 done
 
