@@ -41,6 +41,7 @@ all:
 	./rec-un-rec.sh
 	./rec-unrec-main.sh
 	./tag.sh
+	./tag-checkout.sh
 	./tag-mktemp.sh
 	./tag-reset.sh
 	./unrec-dir.sh
