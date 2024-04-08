@@ -58,7 +58,7 @@ m:
 	./dependents.sh
 	./partial-clone-all.sh
 	./peace.sh
-	./tag.sh
+	./tag-checkout.sh
 	./zigzag.sh
 
 	echo "OK--pijul-tests"

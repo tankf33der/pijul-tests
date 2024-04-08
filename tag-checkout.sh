@@ -18,10 +18,11 @@ cd pijul-tests-data
 pijul init repo
 cd repo
 
+touch p.dat.xz
+pijul add p.dat.xz
 for _ in {0..128}; do
 	eval "$dd"
 	xz -fk p.dat
-	pijul add p.dat.xz
 	record
 	pijul tag create -m.
 done
