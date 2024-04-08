@@ -1,3 +1,3 @@
 ```
-# pkg install linux python3 patch
+# pkg install linux python3 patch xz
 ```
