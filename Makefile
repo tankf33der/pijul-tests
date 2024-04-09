@@ -51,7 +51,7 @@ all:
 	./peace.sh
 	./a-myers.sh
 	./a-patience.sh
-
+	./b-diffz.sh
 m:
 	./braid.sh
 	./credit.sh
