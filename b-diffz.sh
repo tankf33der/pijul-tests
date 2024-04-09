@@ -25,11 +25,11 @@ cp ../pijul-tests/assert.py repo2/
 cd repo2
 
 add
-pijul record --patience -am.
+record
 
-for i in {0..255}; do
+for i in {0..1023}; do
 	$sed -i "0,/Z/s//${i}/" A.txt
-	pijul record --patience -am.
+	record
 	pijul push -a
 
 	cd ../repo
