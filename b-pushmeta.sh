@@ -11,6 +11,7 @@ rm -rf pijul-tests-data
 mkdir pijul-tests-data
 cd pijul-tests-data
 pijul init repo
+# pijul clone mpech@127.0.0.1:pijul-tests-data/repo repo2
 pijul clone repo repo2
 cd repo2
 
