@@ -26,7 +26,6 @@ cd repo2
 
 add
 record
-
 for i in {0..1023}; do
 	$sed -i "0,/Z/s//${i}/" A.txt
 	record
