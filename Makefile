@@ -52,6 +52,7 @@ all:
 	./a-myers.sh
 	./a-patience.sh
 	./b-diffz.sh
+	./b-pushmeta.sh
 m:
 	./braid.sh
 	./credit.sh
