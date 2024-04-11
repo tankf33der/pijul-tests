@@ -10,7 +10,7 @@ cd pijul-tests-data
 pijul init repo
 cd repo
 cp ../../pijul-tests/diff.txt .
-printf  | dd of=./diff.dat count=1024 bs=1 conv=notrunc
+cp ../../pijul-tests/diff.dat .
 add
 record
 
@@ -22,12 +22,12 @@ record
 # 	pijul reset --force
 # done
 
-# # milestone #2 -
-# for i in {0..1023}; do
-# 	echo -ne '\xff' | dd of=diff.dat bs=1 seek=1 count=1 conv=notrunc
-# 	eq 1 "$(pijul diff -s | wc -l)"
-# 	eq 1 "$(pijul diff -s --patience | wc -l)"
-# 	pijul reset --force
-# done
+# milestone #2 -
+for i in {0..1023}; do
+	echo -ne '\xdd' | dd of=diff.dat bs=1 seek="$i" count=1 conv=notrunc
+	eq 1 "$(pijul diff -s | wc -l)"
+	eq 1 "$(pijul diff -s --patience | wc -l)"
+	pijul reset --force
+done
 
 echo "OK--diff"
