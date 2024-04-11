@@ -16,6 +16,7 @@ all:
 	./clone-matryoshka.sh
 	./credit.sh
 	./dependents.sh
+	./diff.sh
 	./doubleitems.sh
 	./emptiness.sh
 	./fork-apply.sh
