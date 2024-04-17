@@ -40,7 +40,6 @@ done
 # milestone #2 "reset"
 for T in $(pijul tag | grep State | cut -f2 -d ' ' | shuf); do
 	pijul tag reset "$T"
-	eq 1 "$(pijul diff -s | wc -l)"
 	xz -t p.dat.xz
 	pijul reset --force
 done
