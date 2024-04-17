@@ -20,15 +20,15 @@ cksum A.dat | awk '{print $1}' > A.meta
 add
 record
 for _ in {0..128}; do
-pijul push -a
-cd ../repo
+	pijul push -a
+	cd ../repo
 
-name=$(cat A.meta)
-str "$name" "$(cksum A.dat | awk '{print $1}')"
-cd ../repo2
-eval "$dd"
-cksum A.dat | awk '{print $1}' > A.meta
-record
+	name=$(cat A.meta)
+	str "$name" "$(cksum A.dat | awk '{print $1}')"
+	cd ../repo2
+	eval "$dd"
+	cksum A.dat | awk '{print $1}' > A.meta
+	record
 done
 
 echo "OK--b-pushmeta"
