@@ -30,7 +30,9 @@ done
 # milestone #1 "--to-channel"
 for T in $(pijul tag | grep State | cut -f2 -d ' ' | shuf); do
 	pijul tag checkout --to-channel mike "$T"
-	xz -t p.dat.xz
+   	xz -t p.dat.xz
+   	pijul channel switch mike
+    xz -t p.dat.xz
 	pijul channel switch main
 	pijul channel delete mike
 done
@@ -38,6 +40,7 @@ done
 # milestone #2 "reset"
 for T in $(pijul tag | grep State | cut -f2 -d ' ' | shuf); do
 	pijul tag reset "$T"
+	eq 1 "$(pijul diff -s | wc -l)"
 	xz -t p.dat.xz
 	pijul reset --force
 done
