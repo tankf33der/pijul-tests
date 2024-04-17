@@ -18,8 +18,11 @@ cd pijul-tests-data
 pijul init repo
 cd repo
 
-touch p.dat.xz
+eval "$dd"
+xz -fk p.dat
 pijul add p.dat.xz
+record
+
 for _ in {0..128}; do
 	eval "$dd"
 	xz -fk p.dat
@@ -38,8 +41,9 @@ for T in $(pijul tag | grep State | cut -f2 -d ' ' | shuf); do
 done
 
 # milestone #2 "reset"
-for T in $(pijul tag | grep State | cut -f2 -d ' ' | shuf); do
+for T in $(pijul tag | grep State | tail -128 | cut -f2 -d ' ' | shuf); do
 	pijul tag reset "$T"
+	eq 1 "$(pijul diff -s | wc -l)"
 	xz -t p.dat.xz
 	pijul reset --force
 done
