@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 set -x -e
 
-source ./functions.sh
+source ./../functions.sh
 
-cd ..
+cd ../..
 rm -rf pijul-tests-data
 mkdir pijul-tests-data
 cd pijul-tests-data
