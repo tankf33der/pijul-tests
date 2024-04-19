@@ -54,6 +54,7 @@ all:
 	./a-patience.sh
 	./b-diffz.sh
 	./b-pushmeta.sh
+	echo "OK--pijul-tests"
 m:
 	./braid.sh
 	./credit.sh
@@ -62,5 +63,4 @@ m:
 	./peace.sh
 	./tag-checkout.sh
 	./zigzag.sh
-
 	echo "OK--pijul-tests"
