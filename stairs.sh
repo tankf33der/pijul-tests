@@ -35,4 +35,4 @@ eq 1 "$(cksum a | awk '{print $2}')"
 cd ..
 pijul clone repo repo3
 
-echo "OK--diff"
+echo "OK--stairs"
