@@ -18,13 +18,13 @@ pijul clone repo repo2
 cd repo2
 
 # milestone #1: stairs UP
-for i in {1..4096}; do
+for i in {1..8192}; do
 	dd if=/dev/random of=a seek=0 count=1 bs="$i" conv=notrunc
 	record
 done
 
 # milestone #2: stairs DOWN
-for i in {4096..1}; do
+for i in {8192..1}; do
 	dd if=/dev/random of=a seek=0 count=1 bs="$i"
 	record
 done
