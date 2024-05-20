@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
+beta=3
+incbeta() {		# valid values from 3 to 9
+    beta=$((beta + 1))
+    if [ $beta = 10 ]
+    then
+        beta=3
+    fi
+}
+
 exist() {
 	local f=$1
 	if [ ! -e "$f" ]; then
