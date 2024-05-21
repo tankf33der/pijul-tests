@@ -22,9 +22,16 @@ for i in {2..40}; do
    record
 done
 
+# milestone #1
 H=$(pijul log --hash-only | head -1)
 pijul apply "$H" --deps-only --channel Empty
 pijul channel switch Empty
 crc Makefile 2705784617
+
+# milestone #2
+pijul channel switch main
+pijul apply "$H" --channel Empty
+pijul channel switch Empty
+crc Makefile 2090994418
 
 echo "OK--apply-depsonly"
