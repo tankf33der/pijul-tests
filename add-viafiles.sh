@@ -28,10 +28,12 @@ for i in {2..40}; do
 	pijul apply "$H" --channel main
 
 	pijul channel switch main
-	pijul channel delete "$i"
-	# assert only one channel left
-	eq 1 "$(pijul channel | wc -l)"
 done
+
+pijul channel switch 28
+H=$(pijul log --hash-only | head -1)
+pijul apply "$H" --channel main
+pijul channel switch main
 
 crc Makefile 2090994418
 
