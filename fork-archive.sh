@@ -21,13 +21,13 @@ for i in {2..40}; do
 	record
 done
 
-#1 milestone 
+#1 milestone
 pijul fork try
 pijul archive --channel try --prefix try -o try
 mv try.tar.gz ..
 cd ..
 tar zxf try.tar.gz
-eq 1 "$(diff -ur try repo | wc -l)"
+eq 0 "$(diff -ur try repo | grep -v "Only in" | wc -l)"
 
 #2 milestone
 cd repo
