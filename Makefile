@@ -20,7 +20,7 @@ all:
 	./doubleitems.sh
 	./emptiness.sh
 	./fork-apply.sh
-    ./fork-archive.sh
+	./fork-archive.sh
 	./fork-carousel.sh
 	./fork-train.sh
 	./fork-unrec.sh
