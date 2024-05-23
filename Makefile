@@ -20,6 +20,7 @@ all:
 	./doubleitems.sh
 	./emptiness.sh
 	./fork-apply.sh
+    ./fork-archive.sh
 	./fork-carousel.sh
 	./fork-train.sh
 	./fork-unrec.sh
@@ -32,7 +33,8 @@ all:
 	./push-record.sh
 	./pull1.sh
 	# ./pull-conflict.sh
-	./pull-loop.sh
+	./pull-fork.sh
+    ./pull-loop.sh
 	./pull-record1.sh
 	./pull-recordall.sh
 	./readd.sh
