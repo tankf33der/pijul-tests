@@ -34,7 +34,7 @@ all:
 	./pull1.sh
 	# ./pull-conflict.sh
 	./pull-fork.sh
-    ./pull-loop.sh
+	./pull-loop.sh
 	./pull-record1.sh
 	./pull-recordall.sh
 	./readd.sh
