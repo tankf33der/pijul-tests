@@ -43,8 +43,20 @@ pijul apply "$H" --channel main
 pijul channel switch main
 crc Makefile 2090994418
 
+# milestone #1
 pijul channel switch mike
 crc Makefile 2090994418
 pijul channel switch main
+
+# milestone #2
+zero "$(pijul diff --channel mike | wc -l)"
+pijul tag create --channel mike -m.
+zero "$(pijul tag | wc -l)"
+pijul channel switch mike
+eq 6 "$(pijul tag | wc -l)"
+H=$(pijul tag | head -1 | awk '{print $2}')
+pijul tag checkout "$H"
+zero "$(pijul diff --channel "$H" | wc -l)"
+
 
 echo "OK--add-viafiles"
