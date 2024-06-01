@@ -15,26 +15,24 @@ for i in {1..10}; do
 done
 
 pijul add a
-record
+pijul rec -am.
 pijul fork m
 
 # ready!
 
-for j in {9..7}; do
-    for i in {1..2}; do
-        sed -i "${i}s/./a/" a
-        record
+j=9
+for i in {1..10}; do
+    sed -i "${i}s/./a/" a
+    record
 
-        pijul channel switch m
-        sed -i "\$s/^\(.\{${j}\}\)./\1b/" a
-        record
-        H="$(pijul log --hash-only | head -1)"
-        pijul apply "${H}" --channel main
-        pijul channel switch main
-
-    done
+    pijul channel switch m
+    sed -i "\$s/^\(.\{${j}\}\)./\1b/" a
+    j=$((j-1))
+    record
+    H="$(pijul log --hash-only | head -1)"
+    pijul apply "${H}" --channel main
+    pijul channel switch main
 done
-
 
 echo "OK--cross-conflict"
 
