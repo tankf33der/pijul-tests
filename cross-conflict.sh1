@@ -24,6 +24,7 @@ j=9
 for i in {1..10}; do
     sed -i "${i}s/./a/" a
     record
+    cat a
 
     pijul channel switch m
     sed -i "\$s/^\(.\{${j}\}\)./\1b/" a
