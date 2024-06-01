@@ -24,19 +24,16 @@ j=9
 for i in {1..10}; do
     sed -i "${i}s/./a/" a
     record
-    cat a
+    wc -l a    # assert 10
 
     pijul channel switch m
     sed -i "\$s/^\(.\{${j}\}\)./\1b/" a
     j=$((j-1))
     record
+    wc -l a    # assert 10
     H="$(pijul log --hash-only | head -1)"
     pijul apply "${H}" --channel main
     pijul channel switch main
 done
 
 echo "OK--cross-conflict"
-
-
-
-
