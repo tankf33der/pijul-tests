@@ -10,9 +10,37 @@ cd pijul-tests-data
 pijul init repo
 cd repo
 
-for _ in {1.10} do
+for i in {1..10}; do
     echo "1111111111" >> a
 done
+
+add
+record
+pijul fork m
+
+# ready!
+
+# 'a' goes down
+# 'b' goes left
+for j in {9..7}; do
+    for i in {1..2}; do
+        sed -i "${i}s/./a/" a
+        record
+
+        pijul channel switch m
+        sed -i "\$s/^\(.\{${j}\}\)./\1b/" a
+        record
+
+        H="$(pijul log --hash-only | head -1)"
+        pijul apply "${H}" --channel main
+        pijul channel switch main
+
+    done
+done
+
+
+echo "OK--cross-conflict"
+
 
 
 

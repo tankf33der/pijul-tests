@@ -64,5 +64,4 @@ H=$(pijul tag | head -1 | awk '{print $2}')
 pijul tag checkout "$H"
 zero "$(pijul diff --channel "$H" | wc -l)"
 
-
 echo "OK--add-viafiles"
