@@ -2,7 +2,8 @@ all:
 	./add.sh
 	./add-pristine.sh
 	./add-viafiles.sh
-	./apply-reverse.sh
+	./apply-diff.sh
+    ./apply-reverse.sh
 	./apply-depsonly.sh
 	./apply-tac.sh
 	./apply-tonew.sh
