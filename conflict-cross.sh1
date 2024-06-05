@@ -36,4 +36,4 @@ for i in {1..10}; do
     pijul channel switch main
 done
 
-echo "OK--cross-conflict"
+echo "OK--conflict-cross"

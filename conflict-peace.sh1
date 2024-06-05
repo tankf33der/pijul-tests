@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+set -x -e
+
+source ./functions.sh
+
+cd ..
+rm -rf pijul-tests-data
+mkdir pijul-tests-data
+cd pijul-tests-data
+pijul init repo
+cd repo
+
+# ready!
+cp ../../pijul-tests/peace-and-war.txt a
+add
+record
+
+# steady!
+pijul fork m
+shuf a -o a
+record
+pijul channel switch m
+shuf a -o a
+record
+H="$(pijul log --hash-only | head -1)"
+pijul apply "${H}" --channel main
+pijul channel switch main
+
+# go!
+H="$(pijul log --hash-only | head -1)"
+pijul unrec "${H}"
+cp ../../pijul-tests/peace-and-war.txt a
+record
+
+
+echo "OK--conflict-peace"
