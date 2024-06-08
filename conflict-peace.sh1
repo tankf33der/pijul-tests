@@ -32,5 +32,4 @@ pijul unrecord "${H}"
 cp ../../pijul-tests/peace-and-war.txt a
 record
 
-
 echo "OK--conflict-peace"
