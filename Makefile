@@ -15,7 +15,8 @@ all:
 	./clone.sh
 	./clone-while.sh
 	./clone-matryoshka.sh
-	./credit.sh
+	./conflict-linux40.sh
+    ./credit.sh
 	./dependents.sh
 	./diff.sh
 	./doubleitems.sh
