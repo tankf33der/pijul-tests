@@ -48,4 +48,22 @@ for T in $(pijul tag | grep State | tail -128 | cut -f2 -d ' ' | shuf); do
 	pijul reset --force
 done
 
+# milestone #3
+pijul channel new m
+pijul channel switch m
+
+tar -xJf ../../pijul-tests/kernel/linux-2.0.1.tar.xz --strip-components=1
+add
+record
+for i in {2..40}; do
+	xzcat ../../pijul-tests/patches/patch-2.0."$i".xz | patch -sp1
+	record
+
+	pijul tag create -m.
+	H="$(pijul tag | head -1 | awk '{print $2}')"
+	pijul tag checkout "$H"
+	zero "$(pijul diff --channel "$H" | wc -l)"
+done
+
+
 echo "OK--tag-checkout"
