@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 set -x -e
 
+p='patch'
+u=$(uname)
+if [ "$u" = "FreeBSD" ] || [ "$u" = "NetBSD" ]; then
+	p='gpatch'
+fi
+
 source ./functions.sh
 
 cd ..
@@ -20,7 +26,7 @@ pijul pull -a
 cd ../repo
 
 for i in {2..40}; do
-    xzcat ../../pijul-tests/patches/patch-2.0."$i".xz | patch -Esp1
+    xzcat ../../pijul-tests/patches/patch-2.0."$i".xz | "$p" -Esp1
     add
     record
 
